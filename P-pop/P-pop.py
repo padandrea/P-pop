@@ -77,19 +77,19 @@ from ExozodiModels import Ertel2018,\
 # declination range, and the effective temperature range which should be
 # included here.
 # StarCatalog = alphaCenA
-StarCatalog = CrossfieldBrightSample # used in Kammerer & Quanz 2018
+# StarCatalog = CrossfieldBrightSample # used in Kammerer & Quanz 2018
 # StarCatalog = ExoCat1 # used by NASA
 # StarCatalog = HPIC # HWO Preliminary Input Catalog
 # StarCatalog = LTC2 # LIFE Target Catalog (version 2)
 # StarCatalog = LTC3 # LIFE Target Catalog (version 3)
-# StarCatalog = LTC4 # LIFE Target Catalog (version 4)
+StarCatalog = LTC4 # LIFE Target Catalog (version 4)
 # StarCatalog = HPIC_LTC4_combined
 # StarCatalog = Sun10pc
-Stypes = ['A', 'F', 'G', 'K', 'M'] # list of str
+Stypes = [ 'F', 'G', 'K'] # list of str
 Dist_range = [0., 20.] # pc, list of float, [min, max]
 Dec_range = [-90., 90.] # deg, list of float, [min, max]
-# Teff_range = [4800., 6300.] # K, list of float, [min, max]
-Teff_range = None
+Teff_range = [3900., 6300.] # K, list of float, [min, max]
+# Teff_range = None
 
 # Select the planet distributions, the scenario, and the scaling model which
 # should be used here. A different planet distribution can be assigned to each
@@ -101,7 +101,12 @@ Teff_range = None
 # StypeToModel = {'F': Weiss2018, 'G': Weiss2018, 'K': Weiss2018, 'M': Weiss2018}
 # StypeToModel = {'F': Weiss2018KDE, 'G': Weiss2018KDE, 'K': Weiss2018KDE, 'M': Weiss2018KDE}
 # StypeToModel = {'A': SAG13, 'F': SAG13, 'G': SAG13, 'K': SAG13, 'M': Dressing2015}
-StypeToModel = {'A': SAG13, 'F': SAG13, 'G': SAG13, 'K': SAG13, 'M': SAG13}
+# StypeToModel = {'A': SAG13, 'F': SAG13, 'G': SAG13, 'K': SAG13, 'M': SAG13}
+StypeToModel = {
+    'F': Bryson2021Model1Hab2Low,
+    'G': Bryson2021Model1Hab2Low,
+    'K': Bryson2021Model1Hab2Low,
+}
 # StypeToModel = {'A': SAG13Extrap, 'F': SAG13Extrap, 'G': SAG13Extrap, 'K': SAG13Extrap, 'M': Dressing2015Extrap}
 # StypeToModel = {'A': SAG13Extrap, 'F': SAG13Extrap, 'G': SAG13Extrap, 'K': SAG13Extrap, 'M': SAG13Extrap}
 # StypeToModel = {'A': HabitableNominal, 'F': HabitableNominal, 'G': HabitableNominal, 'K': HabitableNominal, 'M': HabitableNominal}
@@ -140,7 +145,7 @@ ExozodiModel = Ertel2020
 # Select whether you want to generate summary plots after loading the catalogs,
 # distributions, and models selected above, how many test draws should be
 # done for generating these plots, and where you want to save them.
-SummaryPlots = True
+SummaryPlots = False
 # SummaryPlots = False
 Ntest = 100000 # int
 # Ntest = 10000 # int
@@ -151,8 +156,8 @@ block = False # don't interrupt script, only save summary plots
 
 # Select a name for the output planet population table and how many universes
 # should be simulated.
-Name = 'TestPlanetPopulation' # str
-Nuniverses = 10 # int
+Name = 'LTC4_BrysonLow_100'  # str
+Nuniverses = 100  # int
 
 
 # =============================================================================

@@ -3,3 +3,8 @@ __pycache__/
 *$py.class
 *.DS_Store
 ._*
+
+# Locally generated P-Pop populations
+/LTC4_BrysonLow_*.txt
+/TestPlanetPopulation.txt
+/YieldPopulation*.txt
